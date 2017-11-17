@@ -1,12 +1,30 @@
-<h1>Awesome Cocktail App</h1>
+<%= render 'shared/banner' %>
+<div class= "container text-center">
+</br>
+</br>
 
-<ul>
+<div class="row">
   <% @cocktails.each do |cocktail| %>
-  <li>
-    <%= cocktail.name %>
-    <%= link_to "View", cocktail_path(cocktail) %>
+  <div class="col-xs-12 col-sm-4">
 
-  </li>
+
+
+    <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
+      <div class="card-description">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    </div>
+
+
+
+  </div>
   <% end %>
-</ul>
-<%= link_to "Add a new cocktail!", new_cocktail_path, class: "btn btn-success" %>
+</div>
+
+
+
+</br>
+</br>
+
+
+
